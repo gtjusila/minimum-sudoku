@@ -33,12 +33,14 @@ The instance is
   `python generate_unavoidable_set.py -g 793645281158792436642183795537418629961327548284956173375864912416239857829571364 -n 5000 -o instancezero`
 
   This will generate two files in a newly created folder `unavoidable_sets` named `instancezero.cuts` and `instancezero.data.csv`. The former is a file containing information about the 5000 unavoidable set we created and the later contains statistics of the generation process.
+
  2. Now we generate the mps and aux file for the bilevel solver
 
  `python generate_mps_file.py -g 793645281158792436642183795537418629961327548284956173375864912416239857829571364 -n 3000 -o instancezero -c instancezero`
- 
+
  This will first search the file `unavoidable_sets/instancezero.cuts` load the unavoidable set then generate the bilevel mps and aux file in the folder `mps_files` as 
 `instancezero.mps` and `instancezero.aux`. The first 3000 unavoidable sets will be used as determined by the `-n` parameter
+
 3. The generated MPS and aux file can be used as input to you bilevel solver of choice. We use the following [bilevel solver](https://msinnl.github.io/pages/bilevel.html) with setting 2.
 
 ## Source
