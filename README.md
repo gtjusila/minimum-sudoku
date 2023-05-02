@@ -43,6 +43,12 @@ The instance is
 
 3. The generated MPS and aux file can be used as input to you bilevel solver of choice. We use the following [bilevel solver](https://msinnl.github.io/pages/bilevel.html) with setting 2.
 
+## Computational Results
+
+1. `unavoidable_sets_generation` contains solver data for the unavoidable set generation experiments.
+2. `unavoidable_sets` contains actual `.cuts` file that we use for the bilevel models.
+3. `9by9.csv` contains the solver data from the bilevel solving experiments.
+
 ## Source
 
 1. https://msinnl.github.io/pages/bilevel.html
