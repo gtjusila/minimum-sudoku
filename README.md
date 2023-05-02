@@ -1,4 +1,4 @@
-# How Few Clues To Give? A Bilevel Formulation For The Minimum Sudoku Clue Problem (Code)
+# How Many Clues To Give? A Bilevel Formulation For The Minimum Sudoku Clue Problem (Code)
 
 ## Prerequisites
  - [Gurobi](https://www.gurobi.com/documentation/9.5/quickstart_windows/cs_anaconda_and_grb_conda_.html) Installation with Python Interface
