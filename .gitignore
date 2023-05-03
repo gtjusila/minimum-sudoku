@@ -2,4 +2,6 @@ unavoidable_sets
 mps_files
 jobs
 */__pycache__
+.DS_Store
+*/.DS_Store
 __pycache__
