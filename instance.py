@@ -39,6 +39,10 @@ class ProblemInstance:
         self.current_solution = []
         self.board = np.zeros(shape=(self.n, self.n))
         self.hitting_set_lower_bound = 0
+    
+    def hex_to_num(self, hex):
+        arr = "_123456789ABCDEF0"
+        return arr.index(str(hex))
 
     def load_cuts(self, cut_file, n):
         """
@@ -61,12 +65,13 @@ class ProblemInstance:
         if len(puzzle) != self.n*self.n:
             print(
                 f'Puzzle instance have invalid length. Actual: {len(puzzle)}. Should Be: {self.n**2}')
+            sys.exit()
             return
         if (solve):
             self.puzzle = []
             for i in range(self.n):
                 for j in range(self.n):
-                    if puzzle[self.n*i+j] != "0":
+                    if puzzle[self.n*i+j] != ".":
                         self.puzzle.append((i, j))
             try:
                 puzzle = self.solve_puzzle(puzzle)
@@ -75,7 +80,7 @@ class ProblemInstance:
                 return
         for i in range(self.n):
             for j in range(self.n):
-                self.board[i][j] = int(puzzle[self.n*i+j])
+                self.board[i][j] = self.hex_to_num(puzzle[self.n*i+j])
 
     def solve_puzzle(self, puzzle):
         """
