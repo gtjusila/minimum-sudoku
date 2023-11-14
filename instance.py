@@ -249,6 +249,10 @@ class ProblemInstance:
                 x[i, j, int(self.board[i][j]-1)] for i, j in cut) >= 1, name=f'C{len(self.cuts)}')
             if (len(self.cuts) % 50 == 0):
                 print(f'current set count: {len(self.cuts)}', flush=True)
+            if (len(self.cuts) % 1000 == 0 and len(self.cuts)>= 999):
+                self.save_cuts(cut_file)
+                cut_data = pd.DataFrame(data)
+                cut_data.to_csv(data_file, index=False) 
         total_runtime = time.time()-start_time
         cut_data = pd.DataFrame(data)
         cut_data.to_csv(data_file, index=False)
