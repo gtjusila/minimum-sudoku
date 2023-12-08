@@ -43,6 +43,10 @@ The instance is
 
 3. The generated MPS and aux file can be used as input to you bilevel solver of choice. We use the following [bilevel solver](https://msinnl.github.io/pages/bilevel.html) with setting 2.
 
+## Encoding Of 16x16 Instances
+
+16by16 instances are encoded with labelings 1-9, A-F, and 0 to represent the numbers 1-9, 10-15, and 16 respectively.
+
 ## Computational Results
 
 1. `unavoidable_sets_generation` contains solver data for the unavoidable set generation experiments.
